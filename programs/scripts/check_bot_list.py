@@ -1,11 +1,16 @@
-# returns username
 import requests
 import sys
 
-ALLOWLIST = ["CommanderRoot", "StreamElements", "Nightbot"]
+ALLOWLIST = ["CommanderRoot", "StreamElements", "Nightbot", "Sery_Bot"]
 
-bots_online_response = requests.get("https://api.twitchinsights.net/v1/bots/online")
-bot_list = bots_online_response.json()['bots']
+# This url looks at the first 15 entries
+# bots_online_response = requests.get("https://api.twitchinsights.net/v1/bots/online")
+# bots_online_list = bots_on_response.json()['bots']
+# print(bots_online_list)
+
+# This url looks at more bots
+bots_all_response = requests.get("https://api.twitchinsights.net/v1/bots/all")
+bot_list = bots_all_response.json()['bots']
 
 # list of viewers online
 # print(users_online_list)

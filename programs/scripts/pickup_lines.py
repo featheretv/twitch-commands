@@ -1,5 +1,6 @@
 import random
 
+# Change the location for your list of pickup lines
 PICKUP_LINES_FILE_PATH = 'C:/Users/eunic/IdeaProjects/twitch-commands/programs/resources/pickup_lines.txt'
 
 # Open the file in read mode
