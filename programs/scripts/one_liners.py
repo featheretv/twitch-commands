@@ -1,5 +1,6 @@
 import random
 import sys
+import textwrap
 
 # Change the location for your list of pickup lines
 CAT_FACTS_FILE_PATH = 'C:/Users/eunic/IdeaProjects/twitch-commands/programs/resources/cat_facts.txt'
@@ -29,4 +30,4 @@ with open(file_to_read, "r", encoding="utf8") as file:
     line = list(map(str, all_text.split("\n")))
 
     # Print random line from text file
-    print(random.choice(line))
+    print(textwrap.fill(random.choice(line), 500))

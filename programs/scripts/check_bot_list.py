@@ -1,7 +1,7 @@
 import requests
 import sys
 
-ALLOWLIST = ["CommanderRoot", "StreamElements", "Nightbot", "Sery_Bot"]
+ALLOWLIST = ["CommanderRoot", "Nightbot", "Sery_Bot", "StreamElements"]
 
 # This url looks at the first 15 entries
 # bots_online_response = requests.get("https://api.twitchinsights.net/v1/bots/online")
