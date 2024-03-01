@@ -1,7 +1,7 @@
 import requests
 import sys
 
-ALLOWLIST = ["CommanderRoot", "Nightbot", "Sery_Bot", "StreamElements"]
+ALLOW_LIST = ["CommanderRoot", "Nightbot", "Sery_Bot", "StreamElements"]
 
 # This url looks at the first 15 entries
 # bots_online_response = requests.get("https://api.twitchinsights.net/v1/bots/online")
@@ -12,24 +12,23 @@ ALLOWLIST = ["CommanderRoot", "Nightbot", "Sery_Bot", "StreamElements"]
 bots_all_response = requests.get("https://api.twitchinsights.net/v1/bots/all")
 bot_list = bots_all_response.json()['bots']
 
-# list of viewers online
+# List of viewers online
 # print(users_online_list)
 
-# list of bots names
+# Parse response to save the list of bots names
 bot_names_list = []
 for bot in bot_list:
-    bot_names_list.append(bot[0])
+    bot_names_list.append(bot[0].lower())
 # print(bot_names_list)
 
-# remove allowlist names from list
-for good_bot in map(str.lower, ALLOWLIST):
+# Remove allowed bots from bot_names_list (if found)
+for good_bot in ALLOW_LIST:
     bot_names_list.remove(good_bot.lower())
 # print(bot_names_list)
 
-# for each user on list in bot_names_list, check if user is online bot list
-if sys.argv[1].lower() in map(str.lower, bot_names_list):
-    # check if user is in viewer bot list, if yes, return user
+# Check if viewer is in bot_names_list. If yes, return 1 for viewer found
+if sys.argv[1].lower() in bot_names_list:
     print(1)
 else:
-    # do nothing
+    # Do nothing
     print(0)
