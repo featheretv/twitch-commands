@@ -7,8 +7,9 @@ import textwrap
 # Change the location for your list of pickup lines
 CAT_FACTS_FILE_PATH = 'C:/Users/eunic/IdeaProjects/twitch-commands/programs/resources/cat_facts.txt'
 DAD_JOKES_FILE_PATH = 'C:/Users/eunic/IdeaProjects/twitch-commands/programs/resources/dad_jokes.txt'
-DOG_FACTS_FILE_PATH = 'C:/Users/eunic/IdeaProjects/twitch-commands/programs/resources/dog_facts.txt'
+DARK_JOKES_FILE_PATH = 'C:/Users/eunic/IdeaProjects/twitch-commands/programs/resources/dark_jokes.txt'
 DIARY_FILE_PATH = 'C:/Users/eunic/IdeaProjects/twitch-commands/programs/resources/diary.txt'
+DOG_FACTS_FILE_PATH = 'C:/Users/eunic/IdeaProjects/twitch-commands/programs/resources/dog_facts.txt'
 PICKUP_LINES_FILE_PATH = 'C:/Users/eunic/IdeaProjects/twitch-commands/programs/resources/pickup_lines.txt'
 STORY_TIME_FILE_PATH = 'C:/Users/eunic/IdeaProjects/twitch-commands/programs/resources/storytime.txt'
 
@@ -22,6 +23,8 @@ match sys.argv[1]:
         file_to_read = CAT_FACTS_FILE_PATH
     case "Dad Jokes":
         file_to_read = DAD_JOKES_FILE_PATH
+    case "Dark Jokes":
+        file_to_read = DARK_JOKES_FILE_PATH
     case "Diary":
         file_to_read = DIARY_FILE_PATH
     case "Dog Facts":
